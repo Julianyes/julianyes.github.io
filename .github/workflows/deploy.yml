@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: deploy-index-html
+  cancel-in-progress: false
+
 jobs:
   deploy:
     if: github.actor != 'github-actions[bot]'
@@ -20,7 +24,13 @@ jobs:
           fetch-depth: 0
 
       - name: Copy index.html to root
-        run: cp Website/wwwroot/index.html index.html
+        run: |
+          if [ ! -f Website/wwwroot/index.html ]; then
+            echo "Error: Website/wwwroot/index.html not found"
+            exit 1
+          fi
+
+          cp Website/wwwroot/index.html index.html
 
       - name: Commit and Push updated index.html
         run: |
@@ -35,5 +45,8 @@ jobs:
           fi
 
           git commit -m "Auto-update index.html from wwwroot"
-          git pull --rebase origin master
-          git push origin master
+
+          git fetch origin master
+          git rebase origin/master
+
+          git push origin HEAD:master
