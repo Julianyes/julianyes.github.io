@@ -1,0 +1,25 @@
+name: Deploy index.html to Root
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Copy index.html to root
+        run: cp Website/wwwroot/index.html index.html
+
+      - name: Commit and Push updated index.html
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --staged --quiet || git commit -m "Auto-update index.html from wwwroot"
+          git push
