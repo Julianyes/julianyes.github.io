@@ -39,11 +39,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Pull latest changes before making our commit
           git fetch origin master
           git reset --hard origin/master
 
-          # Re-copy the file after reset to ensure it's present
           cp Website/wwwroot/index.html index.html
 
           git add index.html
@@ -54,4 +52,10 @@ jobs:
           fi
 
           git commit -m "Auto-update index.html from wwwroot"
-          git push origin HEAD:master
+
+          # Retry push mit pull falls rejected
+          for i in 1 2 3; do
+            git push origin HEAD:master && break
+            echo "Push fehlgeschlagen, versuche pull..."
+            git pull --rebase origin master
+          done
