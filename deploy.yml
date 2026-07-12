@@ -1,0 +1,61 @@
+name: Deploy index.html to Root
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: deploy-index-html
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Copy index.html to root
+        run: |
+          if [ ! -f Website/wwwroot/index.html ]; then
+            echo "Error: Website/wwwroot/index.html not found"
+            exit 1
+          fi
+
+          cp Website/wwwroot/index.html index.html
+
+      - name: Commit and Push updated index.html
+        run: |
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin master
+          git reset --hard origin/master
+
+          cp Website/wwwroot/index.html index.html
+
+          git add index.html
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Auto-update index.html from wwwroot"
+
+          # Retry push mit pull falls rejected
+          for i in 1 2 3; do
+            git push origin HEAD:master && break
+            echo "Push fehlgeschlagen, versuche pull..."
+            git pull --rebase origin master
+          done
