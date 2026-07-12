@@ -12,28 +12,29 @@
         }
 
         body {
-            background-color: #0f0f0f;
-            color: #e0e0e0;
+            background-color: #f5f7fa;
+            color: #1a1a1a;
             font-family: 'Segoe UI', sans-serif;
         }
 
         /* NAVBAR */
         nav {
-            background-color: #1a1a1a;
+            background-color: #ffffff;
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
             nav .logo {
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: #4fc3f7;
+                color: #0288d1;
                 letter-spacing: 2px;
             }
 
@@ -44,21 +45,22 @@
             }
 
                 nav ul li a {
-                    color: #e0e0e0;
+                    color: #444;
                     text-decoration: none;
                     font-size: 1rem;
                     transition: color 0.3s;
+                    font-weight: 500;
                 }
 
                     nav ul li a:hover {
-                        color: #4fc3f7;
+                        color: #0288d1;
                     }
 
         /* HERO */
         .hero {
             text-align: center;
             padding: 120px 20px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: linear-gradient(135deg, #e0f4ff, #bde0f7);
             position: relative;
             overflow: hidden;
         }
@@ -70,19 +72,19 @@
                 left: 0;
                 width: 100%;
                 height: 60px;
-                background: #0f0f0f;
+                background: #f5f7fa;
                 clip-path: ellipse(55% 100% at 50% 100%);
             }
 
             .hero h1 {
                 font-size: 3.5rem;
-                color: #4fc3f7;
+                color: #0288d1;
                 margin-bottom: 15px;
             }
 
             .hero p {
                 font-size: 1.2rem;
-                color: #aaa;
+                color: #555;
                 max-width: 600px;
                 margin: 0 auto 30px auto;
                 line-height: 1.8;
@@ -91,17 +93,18 @@
             .hero .btn {
                 display: inline-block;
                 padding: 12px 30px;
-                background-color: #4fc3f7;
-                color: #0f0f0f;
+                background-color: #0288d1;
+                color: #ffffff;
                 border-radius: 30px;
                 text-decoration: none;
                 font-weight: bold;
                 font-size: 1rem;
                 transition: background-color 0.3s, transform 0.2s;
+                box-shadow: 0 4px 15px rgba(2,136,209,0.3);
             }
 
                 .hero .btn:hover {
-                    background-color: #81d4fa;
+                    background-color: #0277bd;
                     transform: scale(1.05);
                 }
 
@@ -119,33 +122,87 @@
                 width: 140px;
                 height: 140px;
                 border-radius: 50%;
-                background: linear-gradient(135deg, #4fc3f7, #1a1a2e);
+                background: linear-gradient(135deg, #bde0f7, #e0f4ff);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 4rem;
                 flex-shrink: 0;
-                border: 3px solid #4fc3f7;
+                border: 3px solid #0288d1;
+                box-shadow: 0 4px 15px rgba(2,136,209,0.2);
             }
 
             .ueber-mich .text h2 {
                 font-size: 2rem;
-                color: #4fc3f7;
+                color: #0288d1;
                 margin-bottom: 15px;
             }
 
             .ueber-mich .text p {
-                color: #aaa;
+                color: #555;
                 line-height: 1.8;
                 font-size: 1.05rem;
             }
 
+        /* INTERESSEN */
+        .interessen {
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 60px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+            .interessen h2 {
+                font-size: 2rem;
+                color: #0288d1;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+        .interessen-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .interesse-item {
+            background-color: #f0f8ff;
+            border: 1px solid #90caf9;
+            border-radius: 16px;
+            padding: 30px 20px;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+            .interesse-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(2,136,209,0.15);
+            }
+
+            .interesse-item .icon {
+                font-size: 2.5rem;
+                margin-bottom: 12px;
+            }
+
+            .interesse-item h3 {
+                color: #0288d1;
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .interesse-item p {
+                color: #666;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
         /* STATS */
         .stats {
-            background-color: #1a1a1a;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
             padding: 50px 40px;
+            background-color: #f5f7fa;
         }
 
         .stats-inner {
@@ -160,12 +217,12 @@
 
         .stat-item h3 {
             font-size: 2.5rem;
-            color: #4fc3f7;
+            color: #0288d1;
             font-weight: bold;
         }
 
         .stat-item p {
-            color: #888;
+            color: #777;
             margin-top: 5px;
             font-size: 0.95rem;
         }
@@ -179,9 +236,9 @@
 
             .reisen h2 {
                 font-size: 2rem;
-                color: #4fc3f7;
+                color: #0288d1;
                 margin-bottom: 30px;
-                border-bottom: 2px solid #333;
+                border-bottom: 2px solid #e0e0e0;
                 padding-bottom: 10px;
             }
 
@@ -192,16 +249,18 @@
         }
 
         .reise-karte {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.2s, border-color 0.3s;
+            transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
             .reise-karte:hover {
                 transform: translateY(-5px);
-                border-color: #4fc3f7;
+                border-color: #0288d1;
+                box-shadow: 0 8px 25px rgba(2,136,209,0.15);
             }
 
             .reise-karte .bild {
@@ -210,7 +269,7 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 4rem;
-                background: linear-gradient(135deg, #1a1a2e, #16213e);
+                background: linear-gradient(135deg, #e0f4ff, #bde0f7);
             }
 
             .reise-karte .inhalt {
@@ -219,9 +278,9 @@
 
             .reise-karte .land-badge {
                 display: inline-block;
-                background-color: #4fc3f722;
-                color: #4fc3f7;
-                border: 1px solid #4fc3f755;
+                background-color: #e0f4ff;
+                color: #0288d1;
+                border: 1px solid #90caf9;
                 border-radius: 20px;
                 padding: 3px 12px;
                 font-size: 0.8rem;
@@ -229,19 +288,19 @@
             }
 
             .reise-karte h3 {
-                color: #fff;
+                color: #1a1a1a;
                 font-size: 1.1rem;
                 margin-bottom: 8px;
             }
 
             .reise-karte p {
-                color: #888;
+                color: #666;
                 font-size: 0.9rem;
                 line-height: 1.6;
             }
 
             .reise-karte .datum {
-                color: #555;
+                color: #999;
                 font-size: 0.8rem;
                 margin-top: 12px;
             }
@@ -255,71 +314,74 @@
 
             .beitraege h2 {
                 font-size: 2rem;
-                color: #4fc3f7;
+                color: #0288d1;
                 margin-bottom: 30px;
-                border-bottom: 2px solid #333;
+                border-bottom: 2px solid #e0e0e0;
                 padding-bottom: 10px;
             }
 
         .karte {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 20px;
-            transition: transform 0.2s, border-color 0.3s;
+            transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
             .karte:hover {
                 transform: translateY(-4px);
-                border-color: #4fc3f7;
+                border-color: #0288d1;
+                box-shadow: 0 8px 25px rgba(2,136,209,0.15);
             }
 
             .karte h3 {
                 font-size: 1.3rem;
-                color: #fff;
+                color: #1a1a1a;
                 margin-bottom: 8px;
             }
 
             .karte .datum {
                 font-size: 0.85rem;
-                color: #666;
+                color: #999;
                 margin-bottom: 12px;
             }
 
             .karte p {
-                color: #aaa;
+                color: #555;
                 line-height: 1.7;
             }
 
             .karte .tag {
                 display: inline-block;
-                background-color: #4fc3f722;
-                color: #4fc3f7;
+                background-color: #e0f4ff;
+                color: #0288d1;
                 border-radius: 20px;
                 padding: 2px 10px;
                 font-size: 0.78rem;
                 margin-right: 6px;
                 margin-bottom: 10px;
-                border: 1px solid #4fc3f744;
+                border: 1px solid #90caf9;
             }
 
         /* KONTAKT */
         .kontakt {
-            background-color: #1a1a1a;
-            border-top: 1px solid #333;
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
             padding: 80px 40px;
             text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
 
             .kontakt h2 {
                 font-size: 2rem;
-                color: #4fc3f7;
+                color: #0288d1;
                 margin-bottom: 15px;
             }
 
             .kontakt p {
-                color: #888;
+                color: #777;
                 margin-bottom: 30px;
                 font-size: 1.05rem;
             }
@@ -334,32 +396,32 @@
             .kontakt-links a {
                 display: inline-block;
                 padding: 12px 28px;
-                border: 1px solid #4fc3f7;
-                color: #4fc3f7;
+                border: 1px solid #0288d1;
+                color: #0288d1;
                 border-radius: 30px;
                 text-decoration: none;
                 font-size: 0.95rem;
                 transition: background-color 0.3s, color 0.3s;
+                font-weight: 500;
             }
 
                 .kontakt-links a:hover {
-                    background-color: #4fc3f7;
-                    color: #0f0f0f;
+                    background-color: #0288d1;
+                    color: #ffffff;
                 }
 
         /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
-            background-color: #111;
-            color: #444;
-            border-top: 2px solid #222;
-            margin-top: 0;
+            background-color: #f0f4f8;
+            color: #999;
+            border-top: 2px solid #e0e0e0;
             font-size: 0.9rem;
         }
 
             footer span {
-                color: #4fc3f7;
+                color: #0288d1;
             }
 
         /* SCROLL TO TOP */
@@ -367,8 +429,8 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #4fc3f7;
-            color: #0f0f0f;
+            background-color: #0288d1;
+            color: #ffffff;
             border: none;
             border-radius: 50%;
             width: 45px;
@@ -378,7 +440,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(79,195,247,0.4);
+            box-shadow: 0 4px 15px rgba(2,136,209,0.4);
             transition: transform 0.2s;
         }
 
@@ -391,7 +453,7 @@
 
     <!-- NAVBAR -->
     <nav>
-        <div class="logo">✈️ Julian</div>
+        <div class="logo">😎 Julian</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="reisen.html">Reisen</a></li>
@@ -402,9 +464,9 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
-        <h1>MOOOOIN erstmal 👋</h1>
-        <p>Willkommen auf meiner persönlichen Website. Hier teile ich meine Reiseberichte, Gedanken und Erlebnisse aus aller Welt.</p>
-        <a href="#reisen" class="btn">🌍 Reisen entdecken</a>
+        <h1>Hey, ich bin Julian! 👋</h1>
+        <p>Willkommen auf meiner persönlichen Website. Hier erfährst du wer ich bin, was mich begeistert und was mich antreibt – im Alltag, auf Reisen und im Leben.</p>
+        <a href="#ueber" class="btn">🙋 Mehr über mich</a>
     </section>
 
     <!-- ÜBER MICH -->
@@ -414,12 +476,44 @@
             <div class="text">
                 <h2>👤 Über mich</h2>
                 <p>
-                    Hey! Ich bin Julian, leidenschaftlicher Reisender und Technik-Enthusiast.
-                    Ich liebe es, neue Kulturen zu entdecken, lokales Essen zu probieren und
-                    meine Erlebnisse hier festzuhalten. Auf dieser Seite findest du alles
-                    rund um meine Abenteuer – von Städtetrips bis zu Fernreisen.
+                    Hey! Ich bin Julian – ein neugieriger Mensch mit Leidenschaft für Technik, Reisen und neue Erfahrungen.
+                    Ich liebe es, Dinge auszuprobieren, Neues zu lernen und mich weiterzuentwickeln.
+                    Ob beim Coden, Reisen oder einfach im Alltag – ich gehe die Dinge mit Begeisterung an
+                    und freue mich immer über spannende Gespräche und neue Bekanntschaften. 🚀
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- INTERESSEN -->
+    <section class="interessen" id="interessen">
+        <h2>💡 Was mich begeistert</h2>
+        <div class="interessen-grid">
+
+            <div class="interesse-item">
+                <div class="icon">💻</div>
+                <h3>Technik & Coding</h3>
+                <p>Ich liebe es, Dinge zu bauen – von Websites bis zu kleinen Projekten.</p>
+            </div>
+
+            <div class="interesse-item">
+                <div class="icon">✈️</div>
+                <h3>Reisen</h3>
+                <p>Neue Länder, Kulturen und Menschen kennenlernen ist meine größte Leidenschaft.</p>
+            </div>
+
+            <div class="interesse-item">
+                <div class="icon">🎵</div>
+                <h3>Musik</h3>
+                <p>Musik begleitet mich überall – beim Arbeiten, Sport und Entspannen.</p>
+            </div>
+
+            <div class="interesse-item">
+                <div class="icon">📚</div>
+                <h3>Weiterbildung</h3>
+                <p>Ich lerne ständig Neues – ob online, aus Büchern oder durch Erfahrungen.</p>
+            </div>
+
         </div>
     </section>
 
@@ -431,8 +525,8 @@
                 <p>Länder bereist</p>
             </div>
             <div class="stat-item">
-                <h3>48</h3>
-                <p>Städte besucht</p>
+                <h3>5+</h3>
+                <p>Projekte gebaut</p>
             </div>
             <div class="stat-item">
                 <h3>25+</h3>
@@ -497,16 +591,16 @@
 
         <div class="karte">
             <span class="tag">💭 Gedanken</span>
-            <h3>Warum Reisen das Leben verändert</h3>
+            <h3>Was mich jeden Tag antreibt</h3>
             <div class="datum">📅 5. Juli 2026</div>
-            <p>Reisen ist mehr als nur Urlaub. Es verändert die Art, wie man die Welt sieht – und sich selbst. Hier sind meine Gedanken dazu.</p>
+            <p>Motivation, Ziele und der Wille, jeden Tag ein bisschen besser zu werden – hier teile ich meine persönlichen Gedanken dazu.</p>
         </div>
 
         <div class="karte">
             <span class="tag">💡 Tipps</span>
-            <h3>Packliste für Langzeitreisen</h3>
+            <h3>Meine Top 5 Apps für den Alltag</h3>
             <div class="datum">📅 1. Juli 2026</div>
-            <p>Was kommt wirklich in den Rucksack? Nach vielen Reisen habe ich die perfekte Packliste zusammengestellt – kompakt, leicht, vollständig.</p>
+            <p>Von Produktivität bis Entspannung – diese Apps nutze ich täglich und sie machen meinen Alltag wirklich einfacher.</p>
         </div>
 
     </section>
@@ -515,7 +609,7 @@
     <div>
         <section class="kontakt" id="kontakt">
             <h2>📬 Kontakt</h2>
-            <p>Hast du Fragen, Anregungen oder willst einfach Hallo sagen? Meld dich gerne!</p>
+            <p>Hast du Fragen, Anregungen oder willst einfach Hallo sagen? Meld dich gerne – ich freue mich immer über neue Kontakte! 😊</p>
             <div class="kontakt-links">
                 <a href="mailto:julian@example.com">✉️ E-Mail schreiben</a>
                 <a href="#">📸 Instagram</a>
@@ -526,20 +620,18 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 <span>Julian</span> – Mit ❤️ und viel Fernweh erstellt</p>
+        <p>© 2026 <span>Julian</span> – Mit ❤️ und guter Laune erstellt</p>
     </footer>
 
     <!-- SCROLL TO TOP BUTTON -->
     <button class="scroll-top" id="scrollBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
 
     <script>
-        // Scroll-to-top Button anzeigen/verstecken
         const btn = document.getElementById('scrollBtn');
         window.addEventListener('scroll', () => {
             btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
         });
 
-        // Smooth Scroll für alle Navbar-Links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();

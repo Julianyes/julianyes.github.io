@@ -1,4 +1,4 @@
-﻿													   <!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -32,16 +32,45 @@
         .page-hero h1 { font-size: 3rem; color: #4fc3f7; margin-bottom: 10px; }
         .page-hero p { color: #aaa; font-size: 1.1rem; }
 
+        /* VIDEO BEREICH */
+        .video-bereich {
+            max-width: 1000px;
+            margin: 60px auto 0 auto;
+            padding: 0 40px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(79,195,247,0.2);
+            border: 2px solid #4fc3f755;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
         .reisen {
             padding: 60px 40px;
             max-width: 1000px;
             margin: 0 auto;
         }
+
         .reisen-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
+
         .reise-karte {
             background-color: #1a1a1a;
             border: 1px solid #333;
@@ -50,6 +79,7 @@
             transition: transform 0.2s, border-color 0.3s;
         }
         .reise-karte:hover { transform: translateY(-5px); border-color: #4fc3f7; }
+
         .reise-karte .bild {
             height: 160px;
             display: flex;
@@ -86,6 +116,7 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav>
         <div class="logo">✈️ Julian</div>
         <ul>
@@ -96,11 +127,26 @@
         </ul>
     </nav>
 
+    <!-- HERO -->
     <div class="page-hero">
         <h1>🌍 Meine Reisen</h1>
         <p>Alle Abenteuer – von nah bis fern</p>
     </div>
 
+    <!-- VIDEO -->
+    <div class="video-bereich">
+        <div class="video-wrapper">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline>
+                <source src="../Videos/julijump.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- REISEN KARTEN -->
     <section class="reisen">
         <div class="reisen-grid">
 
@@ -137,6 +183,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 <span>Julian</span> – Mit ❤️ und viel Fernweh erstellt</p>
     </footer>
