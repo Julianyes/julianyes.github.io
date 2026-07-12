@@ -34,8 +34,17 @@ jobs:
 
       - name: Commit and Push updated index.html
         run: |
+          set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Pull latest changes before making our commit
+          git fetch origin master
+          git reset --hard origin/master
+
+          # Re-copy the file after reset to ensure it's present
+          cp Website/wwwroot/index.html index.html
 
           git add index.html
 
@@ -45,8 +54,4 @@ jobs:
           fi
 
           git commit -m "Auto-update index.html from wwwroot"
-
-          git fetch origin master
-          git rebase origin/master
-
           git push origin HEAD:master
