@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – Julian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+            nav .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #4fc3f7;
+                letter-spacing: 2px;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                gap: 30px;
+            }
+
+                nav ul li a {
+                    color: #e0e0e0;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    transition: color 0.3s;
+                }
+
+                    nav ul li a:hover, nav ul li a.active {
+                        color: #4fc3f7;
+                    }
+
+        .page-hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+        }
+
+            .page-hero h1 {
+                font-size: 3rem;
+                color: #4fc3f7;
+                margin-bottom: 10px;
+            }
+
+            .page-hero p {
+                color: #aaa;
+                font-size: 1.1rem;
+            }
+
+        .kontakt {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+            .kontakt p {
+                color: #888;
+                margin-bottom: 30px;
+                font-size: 1.05rem;
+            }
+
+        .kontakt-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+            .kontakt-links a {
+                display: inline-block;
+                padding: 12px 28px;
+                border: 1px solid #4fc3f7;
+                color: #4fc3f7;
+                border-radius: 30px;
+                text-decoration: none;
+                font-size: 0.95rem;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .kontakt-links a:hover {
+                    background-color: #4fc3f7;
+                    color: #0f0f0f;
+                }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #111;
+            color: #444;
+            border-top: 2px solid #222;
+            font-size: 0.9rem;
+        }
+
+            footer span {
+                color: #4fc3f7;
+            }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">✈️ Julian</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reisen.html">Reisen</a></li>
+            <li><a href="beitraege.html">Beiträge</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>📬 Kontakt</h1>
+        <p>Meld dich gerne – ich freue mich über jede Nachricht!</p>
+    </div>
+
+    <section class="kontakt">
+        <p>Hast du Fragen, Anregungen oder willst einfach Hallo sagen?</p>
+        <div class="kontakt-links">
+            <a href="mailto:julian@example.com">✉️ E-Mail schreiben</a>
+            <a href="#">📸 Instagram</a>
+            <a href="#">💼 LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 <span>Julian</span> – Mit ❤️ und viel Fernweh erstellt</p>
+    </footer>
+
+</body>
+</html>
